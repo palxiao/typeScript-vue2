@@ -5,7 +5,7 @@ import * as utils from './utils'
 
 axios.defaults.timeout = 30000;
 // axios.defaults.headers.Authorization = 'Bearer ';
-axios.defaults.headers.AppKey = '9e8nbMCqDkMhSRkTo8nYb7VF3qUa43EI'
+// axios.defaults.headers.AppKey = '9e8nbMCqDkMhSRkTo8nYb7VF3qUa43EI'
 
 // const version = app_config.VERSION;
 const baseUrl = app_config.API_URL

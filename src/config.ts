@@ -1,10 +1,10 @@
 
-const environment: number = 1;
+const environment: number = 0;
 
 let apiUrl!: string;
 let webUrl!: string;
 if (environment === 0) {
-    apiUrl = 'http://dev.yun.bicobrand.com/api';
+    apiUrl = 'http://localhost:9999';
     webUrl = 'http://dev.yun.bicobrand.com';
 } else {
     apiUrl = 'http://yun.bicobrand.com/api';

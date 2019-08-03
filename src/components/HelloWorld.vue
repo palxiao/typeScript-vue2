@@ -51,6 +51,18 @@ export default class HelloWorld extends Vue {
     });
     // this.test();
     console.log(this.$utils.regular.phone.test(13711300890));
+
+    this.$ajax.home.test({
+      query: `{
+  lists {
+    id,
+    name
+  }
+}`
+    },'post').then((res: Type.Object) => {
+      console.log(res);
+      
+    });
   }
 
   private test() {
@@ -78,6 +90,7 @@ export default class HelloWorld extends Vue {
     // axios请求测试
 
     // this.$ajax.home.getMember().then((res: Type.Object) => {});
+    
   }
 
   @Emit('change')
