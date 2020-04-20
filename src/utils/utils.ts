@@ -4,6 +4,14 @@ export const regular = mRegular
 import app_config from '@/config';
 export const config = app_config
 
+import stopWatch from './widget/stopwatch'
+export const stopwatch = stopWatch
+import Preload from './widget/preload'
+export const preload = Preload
+
+import dayjs from 'dayjs'
+export { dayjs }
+
 /**
  * 对象扩展
  * @param {Object} destination 目标对象
@@ -40,6 +48,13 @@ export const transformDate = (date: string) => {
     return weekDay[myDate.getDay()]
   } else { return '' }
 }
+/**
+ * 返回正确时间
+ */
+export const getDate = (date: string) => {
+  const reDate = new Date(date.replace(/-/g, '/'));
+  return reDate
+}
 
 /**
  * 短日期
@@ -49,8 +64,10 @@ export const getMinDate = (d: string, type: string) => {
   if (isNaN(mydate.getDate())) { return d }
   if (type === 'ym') {
     return mydate.getFullYear() + ' - ' + (mydate.getMonth() + 1)
-  } else {
+  } else if (type === 'md') {
     return mydate.getMonth() + 1 + '-' + mydate.getDate()
+  } else {
+    return (mydate.getMonth() + 1 + '').padStart(2, '0')
   }
 }
 // 判断是否在数组中并返回下标

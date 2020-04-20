@@ -17,15 +17,17 @@ declare global {
   }
   namespace Ajax {
     // axios return data
-    export interface AxiosResponse {
-      data: Response
+    export interface Gql {
+      data: GqlResult
     }
-  
+
     // reqposne interface
-    export interface Response {
-      error: null | object
-      jsonrpc: string
-      result: any
+    export interface GqlResult {
+      [field: string]: any;
+    }
+
+    export interface Result {
+      [field: string]: any;
     }
   }
 }

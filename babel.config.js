@@ -3,6 +3,10 @@ module.exports = {
     '@vue/app'
   ],
   plugins: [
-    ["import", { "libraryName": "vant", "style": true }]
+    ['import', {
+      libraryName: 'vant',
+      libraryDirectory: 'es',
+      style: true
+    }, 'vant']
   ]
 }

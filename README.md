@@ -7,9 +7,29 @@ cssReset: normalize.css
 UI: vant
 
 插件：
+
 qrcode: 二维码生成
-html2cavas: 生成截图
-vue-amap: 高德地图
+
+html2cavas: canvas工具
+
+immutable: 不可变数据处理
+
+antv/f2: 阿里图表组件
+
+dayjs: 替代momentjs的时间处理库
+
+clipboard2: 复制文本到剪贴板
+
+### VsCode设置
+
+```json
+"vetur.format.defaultFormatter.html": "js-beautify-html",
+"[vue]": {},
+"prettier.eslintIntegration": true,
+"prettier.semi": true,
+"prettier.singleQuote": true,
+"[typescript]": {}
+```
 
 ## Project setup
 ```

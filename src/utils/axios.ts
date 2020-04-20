@@ -1,6 +1,9 @@
+/**
+ * 设计规则：只有正确code为200时返回result结果对象，错误返回整个结果对象
+ */
 import axios from 'axios'
-import store from '../store'
-import app_config from '../config'
+import store from '@/store'
+import app_config from '@/config'
 import * as utils from './utils'
 
 axios.defaults.timeout = 30000;
@@ -30,7 +33,6 @@ axios.interceptors.request.use((config: Type.Object) => {
     // config.data = qs.stringify(config.data);
   }
   // console.log(config);
-
   return config
 }, (error) => {
   return Promise.reject(error)
@@ -38,28 +40,34 @@ axios.interceptors.request.use((config: Type.Object) => {
 
 // 响应拦截器
 axios.interceptors.response.use((res: Type.Object) => {
-  store.dispatch('hideLoading');
+  // store.dispatch('hideLoading');
 
-  if (res.status !== 200) {
-    // return falseInfo
-  }
+  // if (res.status !== 200) {
+  //   // return falseInfo
+  // }
 
   if (!res.data) {
     return Promise.reject(res)
   }
   // console.log(res.headers.authorization);
+  if (res.data.code === 401) {
+    console.log('登录失效');
+    store.commit('changeOnline', false);
+  }
 
-  if (res.data.result && res.data.status === 200) {
+  if (res.data.result && res.data.code === 200) {
     return Promise.resolve(res.data.result)
-  }
-  return res.data
+  } else { return Promise.resolve(res.data) }
+
+
+
 }, (error) => {
-  if (error.response.status === 401) {
-    setTimeout(() => {
-      window.localStorage.clear()
-      // window.location.href = app_config.login + "?" + "redirect=" + window.location.href;
-    }, 1000)
-  }
+  // if (error.response.status === 401) {
+  //   setTimeout(() => {
+  //     window.localStorage.clear()
+  //     // window.location.href = app_config.login + "?" + "redirect=" + window.location.href;
+  //   }, 1000)
+  // }
   store.dispatch('hideLoading');
   return Promise.reject(error)
 })
@@ -69,19 +77,19 @@ const fetch = (url: string, params: Type.Object, type: string | undefined = 'get
   if (params && params._noLoading) {
     delete params._noLoading
   } else {
-    store.commit('loading', true);
+    // store.commit('loading', '加载中..');
   }
 
   if (type === 'get') {
     return axios.get(url, {
       headers: {
-        Authorization: 'Bearer ' + localStorage.getItem('token')
+        Authorization: '' + localStorage.getItem('token')
       },
       params
     })
   } else {
     const objtest: Type.Object = {}
-    objtest.Authorization = 'Bearer ' + localStorage.getItem('token')
+    objtest.Authorization = '' + localStorage.getItem('token')
     return (axios as Type.Object)[type](url,
       params, {
         headers: objtest

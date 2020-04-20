@@ -1,8 +1,9 @@
 /**
  * 全局组件注册
  */
-// import  from ''
+import { Button, Field, Divider, NavBar, Toast, Popup } from 'vant'
 
 export default (Vue: Type.Object) => {
-    // Vue.component('', )
+    Vue.component(Button.name, Button)
+    Vue.use(Field).use(Divider).use(NavBar).use(Toast).use(Popup)
 }

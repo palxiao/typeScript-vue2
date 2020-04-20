@@ -10,7 +10,6 @@
     <div id="postcard" ref="postcard" style="">
       <img :src="QRurl" alt="">
     </div>
-    <Map :styles="{height:'300px'}" :center="[121, 31]"></Map>
     <div class="line-clamp-1" style="width:100px;background:red;">爱到家了卡萨基多拉商家的打两局</div>
   </div>
 </template>
@@ -20,12 +19,10 @@ import { Component, Prop, Vue, Emit, Watch } from 'vue-property-decorator';
 import { Button, Icon } from 'vant';
 import QRCode from 'qrcode';
 import html2canvas from 'html2canvas';
-import Map from '@/components/Map.vue';
 @Component({
   components: {
     [Button.name]: Button,
-    [Icon.name]: Icon,
-    Map
+    [Icon.name]: Icon
   }
 })
 export default class HelloWorld extends Vue {
@@ -52,17 +49,6 @@ export default class HelloWorld extends Vue {
     // this.test();
     console.log(this.$utils.regular.phone.test(13711300890));
 
-    this.$ajax.home.test({
-      query: `{
-  lists {
-    id,
-    name
-  }
-}`
-    },'post').then((res: Type.Object) => {
-      console.log(res);
-      
-    });
   }
 
   private test() {
@@ -88,9 +74,7 @@ export default class HelloWorld extends Vue {
       };
     });
     // axios请求测试
-
     // this.$ajax.home.getMember().then((res: Type.Object) => {});
-    
   }
 
   @Emit('change')
