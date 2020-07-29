@@ -8,27 +8,14 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@antv/f2": "^3.4.1",
     "axios": "^0.19.0",
-    "core-js": "^2.6.5",
-    "cssnano": "^4.1.10",
-    "dayjs": "^1.8.16",
-    "html2canvas": "^1.0.0-rc.3",
-    "immutable": "^4.0.0-rc.12",
-    "normalize.css": "^8.0.1",
-    "postcss-aspect-ratio-mini": "^1.0.1",
-    "postcss-cssnext": "^3.1.0",
-    "postcss-px-to-viewport": "^1.1.1",
-    "postcss-viewport-units": "^0.1.6",
-    "postcss-write-svg": "^3.0.1",
-    "qrcode": "^1.4.0",
-    "vant": "^2.0.7",
     "vue": "^2.6.10",
-    "vue-class-component": "^7.0.2",
-    "vue-clipboard2": "^0.3.1",
-    "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "core-js": "^2.6.5",
+    "dayjs": "^1.8.16",
+    "immutable": "^4.0.0-rc.12",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
@@ -42,6 +29,14 @@
     "postcss-loader": "^3.0.0",
     "terser-webpack-plugin": "^2.1.0",
     "typescript": "^3.4.3",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "cssnano": "^4.1.10",
+    "postcss-aspect-ratio-mini": "^1.0.1",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-px-to-viewport": "^1.1.1",
+    "postcss-viewport-units": "^0.1.6",
+    "postcss-write-svg": "^3.0.1",
+    "vue-class-component": "^7.0.2",
+    "vue-property-decorator": "^8.1.0"
   }
 }

@@ -1,21 +1,15 @@
 <template>
   <div class="index">
-    
+    项目初始化成功
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator';
 import VueBase from '@/vueBase';
-import { Swipe, SwipeItem, NoticeBar } from 'vant';
-// import test from '@/components/test.vue';
 
 @Component({
   components: {
-    [Swipe.name]: Swipe,
-    [SwipeItem.name]: SwipeItem,
-    [NoticeBar.name]: NoticeBar,
-    // test
   }
 })
 export default class Index extends VueBase {

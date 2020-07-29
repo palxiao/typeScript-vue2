@@ -4,8 +4,6 @@ export const regular = mRegular
 import app_config from '@/config';
 export const config = app_config
 
-import stopWatch from './widget/stopwatch'
-export const stopwatch = stopWatch
 import Preload from './widget/preload'
 export const preload = Preload
 

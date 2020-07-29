@@ -1,22 +1,22 @@
 /**
  * 同步操作 store.commit() 调用
  */
-import { Toast } from 'vant'
+// import { Toast } from 'vant'
 export default {
     loading(state: Type.Object, data: any) {
-        Toast.clear();
+        // Toast.clear();
         let msg = ''
         if (typeof data === 'string') {
             msg = data
         } else {
-            Toast.clear();
+            // Toast.clear();
             return false
         }
-        Toast.loading({
-            duration: 0,       // 持续展示 toast
-            loadingType: 'spinner',
-            message: msg
-        });
+        // Toast.loading({
+        //     duration: 0,       // 持续展示 toast
+        //     loadingType: 'spinner',
+        //     message: msg
+        // });
     },
     changeOnline(state: Type.Object, status: string) {
         state.online = status;

@@ -10,8 +10,8 @@ import modules from './widget/modules'
 modules(Vue)
 import { Map as mmap, List } from 'immutable'
 /** 复制到剪贴板 */
-import VueClipboard from 'vue-clipboard2'
-Vue.use(VueClipboard)
+// import VueClipboard from 'vue-clipboard2'
+// Vue.use(VueClipboard)
 
 /**
  * 全局组件方法

@@ -1,6 +1,5 @@
-# TS-test
 
-Ts + Vue2.x + vue-router + vuex + axios
+### Ts + Vue2.x + vue-router + vuex + axios
 
 cssReset: normalize.css
 
